@@ -78,12 +78,12 @@ footer a{color:#0a5488}
 @media(max-width:760px){.as-container{width:calc(100% - 36px)}header .as-brand-logo{width:288px;max-width:calc(100vw - 88px);height:86.4px;max-height:86.4px}.as-hero{min-height:500px}.as-hero-photo{inset:0;background-position:60% center}.as-hero-shade{background:linear-gradient(90deg,#0b4e7bea,#0c5887bb 70%,#0d517e8a)}.as-hero-inner{padding:65px 0}.as-pillars{grid-template-columns:1fr}.as-pillar{border:0;border-bottom:1px solid #c8dfe9!important;padding:10px 0}.as-pillar:last-child{border:0!important}.as-mission{grid-template-columns:1fr}.as-mission-photo{min-height:260px}.as-impact{grid-column:auto}.as-hero h1{font-size:41px}.as-icon{width:65px;height:65px;font-size:26px}}
 
 /* Meaning of Sakeena, paired with the homepage hero. */
-.as-hero .as-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,340px);gap:clamp(28px,5vw,80px);align-items:center}
-.as-sakeena-card{justify-self:end;width:100%;padding:28px;border:1px solid rgba(255,255,255,.35);border-radius:22px;background:linear-gradient(145deg,rgba(6,51,76,.95),rgba(9,76,71,.93));box-shadow:0 12px 36px rgba(0,25,42,.22);color:#fff}
+.as-hero .as-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,340px);gap:clamp(28px,5vw,80px);align-items:center;align-self:stretch}
+.as-sakeena-card{justify-self:end;align-self:end;width:100%;padding:28px;border:1px solid rgba(255,255,255,.35);border-radius:22px;background:linear-gradient(145deg,rgba(6,51,76,.95),rgba(9,76,71,.93));box-shadow:0 12px 36px rgba(0,25,42,.22);color:#fff}
 .as-sakeena-kicker{display:block;font-size:10px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#c5f0e4}
 .as-sakeena-arabic{display:block;text-align:center;font-family:"Noto Naskh Arabic","Traditional Arabic",Georgia,serif;font-size:64px;line-height:1.5;padding-top:8px;color:#f4e4b4}
 .as-sakeena-card h2{text-align:center;font-size:22px;font-weight:600;letter-spacing:.03em;margin:0}
 .as-sakeena-rule{width:40px;height:2px;background:#7dd3b0;margin:16px auto}
 .as-hero .as-sakeena-definition{font-size:17px;line-height:1.5;font-weight:600;text-align:center;margin:0 0 10px;color:#fff}
 .as-hero .as-sakeena-note{font-size:13px;line-height:1.65;text-align:center;margin:0;color:#e0eeed}
-@media(max-width:900px){.as-hero .as-hero-inner{grid-template-columns:1fr;gap:26px}.as-sakeena-card{justify-self:start;max-width:520px;padding:22px}.as-sakeena-arabic{font-size:54px;line-height:1.35}.as-sakeena-kicker{text-align:center}}
+@media(max-width:900px){.as-hero .as-hero-inner{grid-template-columns:1fr;gap:26px}.as-sakeena-card{justify-self:start;align-self:auto;max-width:520px;padding:22px}.as-sakeena-arabic{font-size:54px;line-height:1.35}.as-sakeena-kicker{text-align:center}}
