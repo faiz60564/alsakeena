@@ -54,6 +54,6 @@
   const d=new FormData(form);
   const subject='AlSakeena Contact: '+d.get('topic');
   const body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nTopic: '+d.get('topic')+'\n\nMessage:\n'+d.get('message');
-  window.location.href='mailto:info@sakeena.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.location.href='mailto:info@alsakeena.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
  });
 })();
