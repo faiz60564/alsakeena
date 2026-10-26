@@ -1,0 +1,63 @@
+
+/* AlSakeena 2026 modern editorial redesign */
+:root {--ink:#123b55;--sea:#176d84;--leaf:#25835c;--cream:#f7f9f7;--line:#e2eae9;--shadow:0 20px 60px rgba(17,57,68,.09)}
+html {scroll-behavior:smooth}
+body {background:var(--cream);color:#263b47;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.font-serif {font-family:Manrope,Inter,sans-serif;letter-spacing:-.035em}
+h1 {letter-spacing:-.055em!important}
+p {line-height:1.75}
+header.sticky {background:rgba(255,255,255,.97)!important;backdrop-filter:blur(18px);box-shadow:0 4px 30px rgba(20,57,70,.045)!important;border-bottom:1px solid var(--line)!important}
+header .min-h-24 {min-height:90px}
+header nav a {font-weight:600;transition:color .2s}
+header nav a[aria-current="page"],#mobile-menu a[aria-current="page"] {color:#21843a!important}
+header nav a[aria-current="page"] {text-decoration:underline;text-decoration-color:#9ad6b2;text-underline-offset:9px;text-decoration-thickness:3px}
+header img {max-height:76px;object-fit:contain}
+main {overflow:hidden}
+main section {scroll-margin-top:110px}
+main section:not(:first-child) {position:relative}
+main .rounded-2xl,main .rounded-xl {border-radius:22px}
+main .shadow-md,main .shadow-lg {box-shadow:var(--shadow)}
+main a,main button {transition:transform .2s,box-shadow .2s,background-color .2s}
+main a:hover {text-decoration-thickness:2px}
+main .grid > a.block:hover,main .grid > div.group:hover {transform:translateY(-4px);box-shadow:0 22px 55px rgba(16,60,76,.12)}
+main input:focus-visible,main button:focus-visible,main a:focus-visible,header a:focus-visible {outline:3px solid #3ba782;outline-offset:3px}
+main .bg-brand-dark {background-color:#123b55}
+main .text-brand-dark {color:#123b55}
+main .text-brand-emerald {color:#1b765d}
+main .bg-brand-emerald {background-color:#1b765d}
+main .bg-brand-sand\/30 {background:#f3f7f4}
+main .border-slate-100 {border-color:#e7eeeb}
+main .bg-white.rounded-2xl {border:1px solid #e6eeeb}
+main .bg-gradient-to-b.from-brand-dark {background:linear-gradient(125deg,#123b55 0%,#155b65 52%,#1b715e 100%)!important}
+main .bg-gradient-to-b.from-brand-dark h1 {max-width:780px}
+footer {background:#fff!important;border-top:1px solid var(--line)!important}
+footer h4 {letter-spacing:-.025em}
+footer a:hover {color:#21843a!important}
+footer img {max-height:95px;object-fit:contain;object-position:left}
+footer input {min-height:44px}
+footer button {min-height:44px}
+.page-banner {position:relative;isolation:isolate;background:linear-gradient(120deg,#113c55 0%,#176a73 65%,#1b785f 100%);color:white;overflow:hidden}
+.page-banner:after {content:"";position:absolute;right:-80px;top:-220px;width:540px;height:540px;border:1px solid rgba(255,255,255,.19);border-radius:50%;box-shadow:0 0 0 90px rgba(255,255,255,.035),0 0 0 190px rgba(255,255,255,.025);z-index:-1}
+.page-banner .inner {max-width:1152px;margin:auto;padding:76px 24px 82px}
+.page-banner .eyebrow {font-size:.75rem;text-transform:uppercase;letter-spacing:.19em;font-weight:800;color:#b6e6c9;margin-bottom:18px}
+.page-banner h1 {font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.13;font-weight:800;max-width:850px}
+.page-banner p {max-width:660px;margin-top:18px;color:#dcece9;font-size:clamp(1rem,1.6vw,1.2rem)}
+.page-banner .crumb {display:flex;gap:10px;align-items:center;font-size:.78rem;color:#c8e6df;margin-bottom:26px}
+.page-banner .crumb a {color:#fff}
+.page-banner .crumb span {opacity:.65}
+.pillar-strip {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1152px;margin:-26px auto 50px;padding:0 24px;position:relative;z-index:2}
+.pillar-strip a {display:flex;align-items:center;justify-content:center;gap:9px;background:#fff;border:1px solid #e0eae6;border-radius:15px;padding:18px 12px;box-shadow:0 8px 26px rgba(20,57,70,.07);font-size:.86rem;font-weight:700;color:#17536c}
+.pillar-strip a:hover,.pillar-strip a[aria-current="page"] {background:#e8f5ee;color:#1b765d;border-color:#a6d8b8}
+.pillar-strip i {color:#25835c}
+.page-banner + main {min-height:40vh}
+main > .max-w-6xl:first-child {padding-top:45px}
+main > .max-w-6xl:first-child > h1:first-child {font-size:1.9rem}
+@media(max-width:700px) {.page-banner .inner {padding:54px 22px 65px}.pillar-strip {grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-20px}.pillar-strip a {font-size:.8rem;padding:13px 7px}header img {max-height:64px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}main a,main button{transition:none!important}}
+
+/* Locally bundled, responsive program imagery */
+.page-banner .inner {position:relative}
+.page-photo-wrap {width:min(100%,650px);height:240px;margin:38px 0 -38px;border:7px solid rgba(255,255,255,.9);border-radius:24px;overflow:hidden;box-shadow:0 22px 52px rgba(7,35,51,.20)}
+.page-photo-wrap img {display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+@media(min-width:1050px){.page-banner .inner {min-height:405px;padding-right:47%}.page-photo-wrap {position:absolute;right:24px;top:38px;width:42%;height:280px;margin:0}}
+@media(max-width:700px){.page-photo-wrap{height:205px;margin-bottom:-38px}}

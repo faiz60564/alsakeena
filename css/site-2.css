@@ -1,0 +1,3 @@
+/* AlSakeena white header and footer */
+header img, footer img { mix-blend-mode: normal; }
+footer a:focus-visible, header a:focus-visible {outline:2px solid #21843A;outline-offset:3px;}
