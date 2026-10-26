@@ -34,7 +34,36 @@
     }
   </script>
 <link href="css/site-1.css" rel="stylesheet"/>
-<link href="css/site-2.css" rel="stylesheet"/><meta content="Discover AlSakeena’s vision, mission, and values: dignity, compassion, whole-person support, equitable access, self-determination, and accountability." name="description"/><link href="css/redesign.css" rel="stylesheet"/><link href="css/concept-style.css" rel="stylesheet"/><link href="css/single-page.css" rel="stylesheet"/><style>#about.as-mission{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}@media(max-width:767px){#about.as-mission{grid-template-columns:1fr}}</style></head><body id="top"><a class="sr-only focus:not-sr-only" href="#main-content">Skip to main content</a><header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+<link href="css/site-2.css" rel="stylesheet"/><meta content="Discover AlSakeena’s vision, mission, and values: dignity, compassion, whole-person support, equitable access, self-determination, and accountability." name="description"/><link href="css/redesign.css" rel="stylesheet"/><link href="css/concept-style.css" rel="stylesheet"/><link href="css/single-page.css" rel="stylesheet"/><style>
+.about-page .about-title{padding-block:22px 18px}
+.about-page .about-title h1{font-size:clamp(28px,3vw,38px);line-height:1.15}
+.about-page .about-vision{padding-block:30px}
+.about-page .about-vision>.as-container{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;align-items:start;max-width:1200px}
+.about-page #vision-heading{margin:5px 0 0;line-height:1.5}
+.about-page .about-vision p{font-size:clamp(21px,2.2vw,29px);line-height:1.45}
+.about-page #about.as-mission{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;padding-block:30px;align-items:center;scroll-margin-top:110px}
+.about-page .as-mission-photo{min-height:0;height:240px}
+.about-page .as-mission-photo img{display:block;height:100%;object-fit:cover}
+.about-page .as-mission-copy{padding:0}
+.about-page .as-mission-copy h2{font-size:clamp(27px,3vw,36px);margin-bottom:12px}
+.about-page .as-mission-copy p{font-size:16px;line-height:1.65;max-width:65ch;margin-bottom:16px}
+.about-page .about-values{padding-block:30px 36px}
+.about-page #values-heading{font-size:clamp(27px,3vw,36px);margin-bottom:20px}
+.about-page .about-values .grid{gap:16px}
+.about-page .about-values .grid>div{padding:20px}
+.about-page .about-values h3{font-size:18px;margin-bottom:8px}
+.about-page .about-values p{font-size:15px;line-height:1.55}
+@media(max-width:767px){
+.about-page .about-title{padding-block:18px}
+.about-page .about-vision{padding-block:24px}
+.about-page .about-vision>.as-container{grid-template-columns:1fr;gap:10px}
+.about-page #vision-heading{margin:0}
+.about-page #about.as-mission{grid-template-columns:1fr;gap:20px;padding-block:24px}
+.about-page .as-mission-photo{height:210px}
+.about-page .about-values{padding-block:24px}
+.about-page .about-values .grid{gap:12px}
+}
+</style></head><body id="top"><a class="sr-only focus:not-sr-only" href="#main-content">Skip to main content</a><header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between min-h-24 gap-5 py-3">
 <!-- Logo Brand -->
@@ -60,7 +89,7 @@
 <div class="pt-2">
 </div>
 <a class="block py-2 text-[#07517B] font-medium" href="index.html">Home</a><a class="block py-2 text-[#07517B] font-medium" aria-current="page" href="#about">About Us</a><a class="block py-2 text-[#07517B] font-medium" href="scope.html">Scope</a><a class="block py-2 text-[#07517B] font-medium" href="solution.html">Solution</a><a class="block py-2 text-[#07517B] font-medium" href="index.html#contact">Contact</a></div>
-</header><main id="main-content"><div class="as-container py-10"><h1 class="text-4xl md:text-5xl font-bold text-brand-dark">About Us</h1></div><section aria-labelledby="vision-heading" class="bg-brand-dark text-white py-14 sm:py-20">
+</header><main id="main-content" class="about-page"><div class="as-container about-title"><h1 class="text-4xl md:text-5xl font-bold text-brand-dark">About Us</h1></div><section aria-labelledby="vision-heading" class="about-vision bg-brand-dark text-white">
 <div class="as-container max-w-5xl">
 <h2 class="text-brand-accent text-sm font-bold uppercase tracking-widest mb-5" id="vision-heading">Our Vision</h2>
 <p class="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-relaxed">A world where people living with mental health challenges have the care, support, and opportunities to live with dignity, belonging, and hope.</p>
@@ -73,7 +102,7 @@
 <a class="as-btn as-btn-blue" href="solution.html">Explore our solution <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
-</section><section aria-labelledby="values-heading" class="bg-brand-sand/40 py-14 sm:py-20"><div class="as-container">
+</section><section aria-labelledby="values-heading" class="about-values bg-brand-sand/40"><div class="as-container">
 <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-8" id="values-heading">Our Values</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm"><h3 class="text-xl font-bold text-brand-emerald mb-3">Dignity</h3><p class="text-slate-600 leading-relaxed">We respect every person’s worth, choices, and potential.</p></div>
