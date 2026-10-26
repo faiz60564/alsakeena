@@ -43,30 +43,6 @@
     allPillarsButton.addEventListener('click', () => { selectedPillar = 'all'; updateCalculator(slider.value); });
     updateCalculator(slider.value);
 
-    // 3. Donation Modal Controls
-    const donateModal = document.getElementById('donate-modal');
-    const openModalBtn = document.getElementById('open-donate-modal');
-    const closeModalBtn = document.getElementById('close-modal');
-
-    openModalBtn?.addEventListener('click', () => {
-      donateModal.classList.remove('hidden');
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      donateModal.classList.add('hidden');
-    });
-
-    donateModal.addEventListener('click', (e) => {
-      if (e.target === donateModal) {
-        donateModal.classList.add('hidden');
-      }
-    });
-
-    function processDonation() {
-      donateModal.classList.add('hidden');
-      showToast("Thank you for your generous gift to AlSakeena!");
-    }
-
     function showToast(msg) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toast-message');
