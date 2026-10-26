@@ -17,9 +17,17 @@
     let selectedPillar = 'all';
     const pillarButtons = document.querySelectorAll('.pillar-choice');
     const allPillarsButton = document.getElementById('all-pillars');
+    const paypalDonate = document.getElementById('paypal-donate');
+    function paypalDonationUrl(value) {
+      const amount = Number(value);
+      const valid = Number.isFinite(amount) && amount >= Number(slider.min) && amount <= Number(slider.max);
+      return 'https://www.paypal.com/donate/?business=46HLF5UU29M9E&currency_code=USD' +
+        (valid ? '&amount=' + encodeURIComponent(amount.toFixed(2)) : '');
+    }
     function updateCalculator(val) {
       const formatted = `$${Number(val).toLocaleString('en-US')}`;
       amountDisplay.textContent = formatted;
+      if (paypalDonate) paypalDonate.href = paypalDonationUrl(val);
       if (btnAmountDisplay) btnAmountDisplay.textContent = formatted;
       if (modalAmountText) modalAmountText.textContent = formatted;
       const impact = pillarImpact[selectedPillar];
@@ -42,6 +50,9 @@
     }));
     allPillarsButton.addEventListener('click', () => { selectedPillar = 'all'; updateCalculator(slider.value); });
     updateCalculator(slider.value);
+    paypalDonate?.addEventListener('click', () => {
+      paypalDonate.href = paypalDonationUrl(slider.value);
+    });
 
     function showToast(msg) {
       const toast = document.getElementById('toast');
