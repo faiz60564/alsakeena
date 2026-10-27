@@ -1,20 +1,5 @@
 
-    // 1. Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // 4. Animated Counters for Stats Grid
+    // Mobile navigation is initialized after shared components load in components.js.\n\n    // 4. Animated Counters for Stats Grid
     const counters = document.querySelectorAll('.counter');
     let animated = false;
 
