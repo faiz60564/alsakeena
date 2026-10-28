@@ -1,9 +1,11 @@
 
-    // Mobile navigation is initialized after shared components load in components.js.\n\n    // 4. Animated Counters for Stats Grid
+    // Mobile navigation is initialized after shared components load in components.js.
+
+    // 4. Animated Counters for Stats Grid
     const counters = document.querySelectorAll('.counter');
     let animated = false;
 
-    window.addEventListener('scroll', () => {
+    const animateCounters = () => {
       const epidemiologySec = document.getElementById('epidemiology');
       if (!epidemiologySec) return;
 
@@ -27,7 +29,9 @@
           updateCount();
         });
       }
-    });
+    };
+    window.addEventListener('scroll', animateCounters, { passive: true });
+    animateCounters();
   
 
 (function(){
