@@ -25,7 +25,7 @@ This writes both original PNGs to `brand/exports/`. They are convenience exports
 
 ## Facebook cover
 
-[Approved Facebook cover PNG](approved/alsakeena-facebook-cover.png) — user-approved banner featuring the full logo, “Rooted in peace. Built for dignity.”, the four areas of support, and alsakeena.org. Download the PNG directly for Facebook. Preserve this approved original and preview desktop/mobile cropping when uploading.
+[Approved Facebook cover PNG](approved/alsakeena-facebook-cover.png) — user-approved banner featuring the full logo and its original tagline, the four areas of support, and alsakeena.org (without the separate “Rooted in peace. Built for dignity.” headline). Download the PNG directly for Facebook. Preserve this approved original and preview desktop/mobile cropping when uploading.
 
 ## Brand rules
 
