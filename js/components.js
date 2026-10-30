@@ -11,7 +11,14 @@
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error('HTTP ' + response.status);
-      target.outerHTML = await response.text();
+      let markup = await response.text();
+      if (id === 'site-header' && ['about.html', 'scope.html'].includes(page)) {
+        const template = document.createElement('template');
+        template.innerHTML = markup;
+        template.content.querySelector('.as-header-pillars')?.remove();
+        markup = template.innerHTML;
+      }
+      target.outerHTML = markup;
     } catch (error) {
       console.error('Could not load ' + url, error);
       target.textContent = 'Unable to load site navigation. Please refresh the page.';
