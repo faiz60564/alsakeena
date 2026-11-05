@@ -2,8 +2,8 @@
 (async function () {
   const page = location.pathname.split('/').pop() || 'index.html';
   const components = [
-    ['site-header', 'components/header.html'],
-    ['site-footer', 'components/footer.html']
+    ['site-header', 'components/header.html?v=homepage-launch'],
+    ['site-footer', 'components/footer.html?v=homepage-launch']
   ];
   await Promise.all(components.map(async ([id, url]) => {
     const target = document.getElementById(id);
