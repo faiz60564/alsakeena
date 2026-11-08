@@ -4,8 +4,8 @@
 .as-eyebrow { color: #FFD5B0; }
 .as-hero-copy h1::after { content: ""; display: block; width: 76px; height: 4px; margin-top: 18px; border-radius: 999px; background: #F3A45D; }
 .as-pillar-band { background: linear-gradient(110deg,#e9f6fc 0%,#f6f9f6 65%,#fff2e8 100%); }
-.as-pillar:nth-child(4) .as-icon { background: linear-gradient(145deg,#D87334,#B74D20); }
-.as-pillar:nth-child(4) strong { color: var(--as-orange-deep); }
+.as-pillar:nth-child(4) .as-icon { background: var(--as-orange); }
+.as-pillar:nth-child(4) strong { color: var(--as-orange); }
 .as-section-label, .page-banner .eyebrow { text-decoration-color: #E9A06B; }
 .as-impact-art { border-bottom: 3px solid #E9A06B; }
 .as-below-links a:hover { border-color: var(--as-orange); background: var(--as-orange-soft); color: var(--as-orange-deep); }
@@ -19,3 +19,8 @@ footer { border-top: 3px solid #E9A06B !important; }
 footer h4 { position: relative; }
 footer h4::after { content: ""; display: block; width: 32px; height: 3px; margin-top: 7px; border-radius: 3px; background: #D87334; }
 @media (prefers-reduced-motion: reduce) { .as-below-links a { transition: none; } }
+
+/* Keep the Opportunity card accents consistent with the brand orange. */
+main .as-opportunity-pillar { border-top-color: var(--as-orange); }
+main .as-opportunity-pillar .text-amber-600,
+main .as-opportunity-pillar .text-amber-700 { color: var(--as-orange); }
