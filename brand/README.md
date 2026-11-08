@@ -6,10 +6,13 @@ Check this guide before using or replacing any AlSakeena graphic. This folder is
 
 | File | Use | Original image |
 | --- | --- | --- |
-| [Full logo](approved/alsakeena-full-logo.svg) | Website header and footer; full brand signature with “Restoring Peace and Economic Dignity” | User-supplied PNG, 1983 × 793 |
+| [Latest full logo — orange accent](approved/alsakeena-full-logo-orange.png) | Latest user-supplied full logo; orange swoosh at right and “Restoring Peace and Economic Dignity” tagline | Original PNG, 1983 × 793 |
+| [Previous full logo — blue and green](approved/alsakeena-full-logo.svg) | Currently used in the website header and footer; retained approved original | User-supplied PNG, 1983 × 793 |
 | [Instagram profile image](approved/alsakeena-instagram-profile.svg) | Social profile/avatar; blue A, green S, sweeping underline, white background | User-approved generated PNG, 1254 × 1254 |
 
-These SVG files are containers embedding the exact original PNG bytes. They are not vector redraws. The original pixels have not been resized, recolored, cropped, or compressed again.
+The latest orange-accent logo is stored as the exact user-supplied PNG and can be downloaded directly. It is approved for this graphics collection, with its original proportions, colors, and tagline preserved.
+
+The SVG files are containers embedding the exact original PNG bytes. They are not vector redraws. The original pixels have not been resized, recolored, cropped, or compressed again.
 
 For Instagram, export the embedded PNG using the helper below. Instagram needs the PNG rather than the SVG container. Preview the circular crop before uploading.
 
@@ -35,7 +38,7 @@ This writes both original PNGs to `brand/exports/`. They are convenience exports
 - Preserve the full logo’s tagline. Use the AS profile image when the full signature would be too small.
 - Use white backgrounds and sufficient space around the mark.
 - Do not crop, recolor, stretch, redraw, or replace approved artwork without approval.
-- Website deployment copy of the approved full logo: `assets/alsakeena-peace-dignity-logo.svg`. Keep it in sync if a future replacement is approved.
+- The website currently uses the previous blue-and-green full logo at `assets/alsakeena-peace-dignity-logo.svg`. The latest orange-accent logo is saved in this collection for future use; changing website placements is a separate update.
 - `assets/alsakeena-original-logo.png` is a legacy asset retained for compatibility/history, **not approved for new placements**.
 - Other website photographs are existing site imagery, not approved brand logos; they were not added to this approved collection.
 
