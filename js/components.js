@@ -24,13 +24,34 @@
       target.textContent = 'Unable to load site navigation. Please refresh the page.';
     }
   }));
-  document.querySelectorAll('.as-unified-nav a').forEach(link => {
-    const href = link.getAttribute('href') || '';
-    const dest = href.split('#')[0] || page;
-    const isPageLink = !href.includes('#') || href.endsWith('#top');
-    if (dest === page && isPageLink) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
+  const updateActiveNavigation = () => {
+    const currentHash = location.hash || '#top';
+    document.querySelectorAll('.as-unified-nav a').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const [dest, fragment] = href.split('#');
+      const isCurrent = (dest || page) === page && (!fragment || '#' + fragment === currentHash);
+      if (isCurrent) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  const header = document.querySelector('.as-unified-header');
+  const updateHeaderHeight = () => {
+    if (header) document.documentElement.style.setProperty('--as-sticky-header-height', header.getBoundingClientRect().height + 'px');
+  };
+  const alignFramework = () => {
+    if (location.hash !== '#pillars') return;
+    document.getElementById('pillars')?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  };
+  updateActiveNavigation();
+  updateHeaderHeight();
+  if (header && typeof ResizeObserver !== 'undefined') new ResizeObserver(updateHeaderHeight).observe(header);
+  window.addEventListener('resize', updateHeaderHeight);
+  window.addEventListener('hashchange', () => {
+    updateActiveNavigation();
+    alignFramework();
   });
+  // Fragment navigation can happen before the asynchronous header changes the layout.
+  requestAnimationFrame(() => requestAnimationFrame(alignFramework));
   const button = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('main-nav');
   if (button && menu) {
