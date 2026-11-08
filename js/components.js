@@ -2,7 +2,7 @@
 (async function () {
   const page = location.pathname.split('/').pop() || 'index.html';
   const components = [
-    ['site-header', 'components/header.html?v=orange-logo'],
+    ['site-header', 'components/header.html?v=scope-header'],
     ['site-footer', 'components/footer.html?v=orange-logo']
   ];
   await Promise.all(components.map(async ([id, url]) => {
@@ -24,25 +24,29 @@
       target.textContent = 'Unable to load site navigation. Please refresh the page.';
     }
   }));
-  document.querySelectorAll('header nav a, #mobile-menu a').forEach(link => {
+  document.querySelectorAll('.as-unified-nav a').forEach(link => {
     const href = link.getAttribute('href') || '';
     const dest = href.split('#')[0] || page;
-    if (dest === page && !href.includes('#contact')) link.setAttribute('aria-current', 'page');
+    const isPageLink = !href.includes('#') || href.endsWith('#top');
+    if (dest === page && isPageLink) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
   const button = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  const menu = document.getElementById('main-nav');
   if (button && menu) {
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-controls', 'mobile-menu');
-    button.addEventListener('click', () => {
-      const opening = menu.classList.contains('hidden');
-      menu.classList.toggle('hidden', !opening);
+    const setOpen = opening => {
+      menu.dataset.open = String(opening);
       button.setAttribute('aria-expanded', String(opening));
+      button.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
+    };
+    setOpen(false);
+    button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        button.focus();
+      }
     });
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      button.setAttribute('aria-expanded', 'false');
-    }));
   }
 })();
