@@ -3,7 +3,7 @@
   const page = location.pathname.split('/').pop() || 'index.html';
   const components = [
     ['site-header', 'components/header.html?v=scope-header'],
-    ['site-footer', 'components/footer.html?v=orange-logo']
+    ['site-footer', 'components/footer.html?v=shared-footer-20261110']
   ];
   await Promise.all(components.map(async ([id, url]) => {
     const target = document.getElementById(id);

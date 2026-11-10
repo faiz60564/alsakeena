@@ -1,0 +1,32 @@
+/* Canonical footer styling: independent of Tailwind and page layouts. */
+footer.as-site-footer{box-sizing:border-box;display:block;background:#fff!important;border-top:3px solid #e9a06b!important;padding:32px 0 24px;margin:0;color:#07517b;font:14px/1.6 Inter,"Segoe UI",Arial,sans-serif;text-align:left}
+.as-site-footer *,.as-site-footer *::before,.as-site-footer *::after{box-sizing:border-box}
+.as-site-footer .as-footer-container{width:min(1280px,calc(100% - 64px));max-width:none;margin:0 auto;padding:0}
+.as-site-footer .as-footer-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,2fr) minmax(0,3fr);gap:24px;padding:0 0 24px;border-bottom:1px solid #dce5ed;align-items:start}
+.as-site-footer p{font-size:14px;line-height:1.65;margin:0;color:#4b5e76;letter-spacing:normal}
+.as-site-footer a{color:#07517b;text-decoration:none;overflow-wrap:anywhere}
+.as-site-footer a:hover{color:#21843a!important;text-decoration:underline}
+.as-site-footer a:focus-visible,.as-site-footer button:focus-visible,.as-site-footer input:focus-visible{outline:3px solid #c65b23;outline-offset:4px}
+.as-site-footer .as-footer-brand img{display:block;width:100%;max-width:320px;height:auto;max-height:106px;object-fit:contain;object-position:left;margin:0;border:0}
+.as-site-footer .as-footer-brand p{margin:20px 0 0;max-width:384px}
+.as-site-footer .as-footer-heading{position:relative;font:700 18px/1.4 Inter,"Segoe UI",Arial,sans-serif;letter-spacing:-.025em;color:#07517b;margin:0 0 18px;padding:0;text-transform:none}
+.as-site-footer .as-footer-heading::after{content:"";display:block;position:static;height:3px;width:32px;background:#d87334;border-radius:3px;margin:7px 0 0}
+.as-site-footer .as-footer-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.as-site-footer .as-footer-social{text-align:center}
+.as-site-footer .as-footer-social .as-footer-heading::after{margin-inline:auto}
+.as-site-footer .as-footer-social-links{display:flex;justify-content:center;align-items:center;gap:16px}
+.as-site-footer .as-footer-social-links a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px}
+.as-site-footer .as-footer-social-links svg{display:block;flex:none;width:25px;height:25px}
+.as-site-footer .as-footer-updates>p{margin:0 0 12px}
+.as-site-footer .as-footer-subscribe{margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.as-site-footer .as-footer-subscribe input{display:block;appearance:none;width:100%;min-width:0;height:44px;background:#fff;color:#07517b;border:1px solid #cbd5e1;border-radius:8px;padding:9px 12px;font:14px/1.5 Inter,"Segoe UI",Arial,sans-serif;box-shadow:none;margin:0}
+.as-site-footer .as-footer-subscribe input::placeholder{color:#8592a7;opacity:1}
+.as-site-footer .as-footer-subscribe button{display:block;appearance:none;width:100%;min-height:44px;border:0;border-radius:8px;background:#21843a;color:#fff;padding:9px 14px;font:600 14px/1.5 Inter,"Segoe UI",Arial,sans-serif;cursor:pointer;margin:0}
+.as-site-footer .as-footer-subscribe button:hover{background:#17662d}
+.as-site-footer .as-footer-subscribe .as-footer-status{font-size:12px}
+.as-site-footer .as-footer-subscribe .as-footer-status[hidden]{display:none}
+.as-site-footer .as-footer-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.as-site-footer .as-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:24px;border:0;margin:0}
+.as-site-footer .as-footer-bottom p,.as-site-footer .as-footer-bottom a{font-size:12px;line-height:1.6;color:#07517b;margin:0}
+@media(max-width:1023px){.as-site-footer .as-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px}}
+@media(max-width:640px){footer.as-site-footer{padding-top:24px}.as-site-footer .as-footer-container{width:calc(100% - 32px)}.as-site-footer .as-footer-grid{grid-template-columns:minmax(0,1fr);gap:28px}.as-site-footer .as-footer-bottom{flex-direction:column;text-align:center}.as-site-footer .as-footer-brand img{max-width:300px}}
