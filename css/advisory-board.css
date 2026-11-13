@@ -20,3 +20,6 @@
 .as-advisory-note p{margin:0;font-size:15px}
 .as-advisory-skip{position:absolute;left:-9999px}.as-advisory-skip:focus{position:fixed;top:8px;left:8px;z-index:100;padding:10px;background:#fff}
 @media(max-width:760px){.as-advisory-wrap{width:calc(100% - 36px)}.as-advisory-grid{grid-template-columns:1fr;gap:25px}.as-advisory-hero{padding:48px 0 50px}.as-advisory-hero p:last-child{font-size:16px}.as-advisory-main{padding:35px 0 65px}.as-advisory-person img{width:200px;height:200px}.as-advisory-content{padding:23px 22px}}
+/* Keep the current small portrait assets at native display size until high-resolution replacements are published. */
+.as-advisory-person img{width:260px;max-width:100%;height:300px;object-fit:cover;object-position:center;margin:24px auto 0;border-radius:12px;background:#eff4ed}
+@media(max-width:760px){.as-advisory-person img{width:260px;height:300px;max-width:calc(100% - 32px)}}
