@@ -5,6 +5,16 @@
 <nav class="as-unified-nav" id="main-nav" aria-label="Main navigation"><a href="index.html#top">Home</a><div class="as-nav-dropdown"><button class="as-nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu">About Us <span aria-hidden="true">▾</span></button><div class="as-nav-submenu" id="about-submenu"><a href="about.html">Vision, Mission, Values</a><a href="board-of-directors.html">Board of Directors</a><a href="advisory-board.html">Board of Advisors</a></div></div><a href="scope.html">Our Scope</a><a href="index.html#pillars">Our Approach</a><a href="contact.html">Contact</a><a class="as-unified-donate" href="donate.html">Donate <span aria-hidden="true">♡</span></a></nav>
 </div>
 </header><style>
+/* Self-contained dropdown styling so dynamically loaded header works with cached page styles. */
+.as-unified-header .as-nav-dropdown{position:relative;display:flex;align-items:center;flex:0 0 auto}
+.as-unified-header .as-nav-dropdown-toggle{appearance:none;border:0;background:transparent;padding:8px 0;color:#07517b;font:650 13px/1.65 "Segoe UI",Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.as-unified-header .as-nav-dropdown-toggle:hover,.as-unified-header .as-nav-dropdown-toggle[aria-expanded="true"]{color:#21843a}
+.as-unified-header .as-nav-submenu{display:none;position:absolute;z-index:1000;top:100%;left:-14px;width:max-content;min-width:225px;max-width:290px;padding:8px 0;background:#fff;border:1px solid #dce6e5;border-radius:8px;box-shadow:0 12px 24px #063b5a25}
+.as-unified-header .as-nav-submenu>a{display:block!important;float:none!important;width:100%;padding:11px 15px;margin:0;color:#07517b;text-decoration:none;font:600 13px/1.4 "Segoe UI",Arial,sans-serif;white-space:normal}
+.as-unified-header .as-nav-submenu>a:hover,.as-unified-header .as-nav-submenu>a:focus-visible{background:#eff7ed;color:#21843a}
+@media(min-width:781px){.as-unified-header .as-nav-dropdown:hover .as-nav-submenu,.as-unified-header .as-nav-dropdown:focus-within .as-nav-submenu,.as-unified-header .as-nav-dropdown[data-open="true"] .as-nav-submenu{display:block}}
+@media(max-width:780px){.as-unified-header .as-nav-dropdown{display:block;width:100%}.as-unified-header .as-nav-dropdown-toggle{width:100%;text-align:left;padding:11px 9px;font-size:14px}.as-unified-header .as-nav-submenu{position:static;min-width:0;max-width:none;width:100%;border:0;border-radius:0;box-shadow:none;padding:0 0 6px 14px}.as-unified-header .as-nav-dropdown[data-open="true"] .as-nav-submenu{display:block}.as-unified-header .as-nav-submenu>a{padding:10px 12px;font-size:14px}}
+</style><style>
 .as-header-pillars{padding:10px 0;border-top:0;border-bottom:1px solid #d6e7ef}
 .as-header-pillars .as-container{width:min(1430px,calc(100% - 48px))}
 .as-header-pillars .as-pillars{grid-template-columns:repeat(4,minmax(0,1fr))}
