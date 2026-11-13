@@ -2,7 +2,7 @@
 (async function () {
   const page = location.pathname.split('/').pop() || 'index.html';
   const components = [
-    ['site-header', 'components/header.html?v=scope-header'],
+    ['site-header', 'components/header.html?v=about-dropdown-20261113'],
     ['site-footer', 'components/footer.html?v=shared-footer-20261110']
   ];
   await Promise.all(components.map(async ([id, url]) => {
