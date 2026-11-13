@@ -34,15 +34,34 @@
     animateCounters();
   
 
-(function(){
- const form=document.getElementById('alsakeena-contact-form');
- if(!form)return;
- form.addEventListener('submit',function(event){
+(function () {
+ const form = document.getElementById('alsakeena-contact-form');
+ if (!form) return;
+ const status = document.getElementById('contact-form-status');
+ const submit = form.querySelector('[type="submit"]');
+ form.addEventListener('submit', async function (event) {
   event.preventDefault();
-  if(!form.reportValidity())return;
-  const d=new FormData(form);
-  const subject='AlSakeena Contact: '+d.get('topic');
-  const body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nTopic: '+d.get('topic')+'\n\nMessage:\n'+d.get('message');
-  window.location.href='mailto:info@alsakeena.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  if (!form.reportValidity()) return;
+  submit.disabled = true;
+  submit.setAttribute('aria-busy', 'true');
+  status.textContent = 'Sending your message…';
+  try {
+   const response = await fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+   });
+   const data = await response.json();
+   if (!response.ok) throw new Error(data.message || 'Message could not be sent.');
+   status.textContent = data.message;
+   status.className = 'text-sm text-green-800 font-semibold';
+   form.reset();
+  } catch (error) {
+   status.textContent = error.message || 'Unable to send. Please email info@alsakeena.org directly.';
+   status.className = 'text-sm text-red-700 font-semibold';
+  } finally {
+   submit.disabled = false;
+   submit.removeAttribute('aria-busy');
+  }
  });
 })();
