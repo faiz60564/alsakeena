@@ -52,6 +52,30 @@
   });
   // Fragment navigation can happen before the asynchronous header changes the layout.
   requestAnimationFrame(() => requestAnimationFrame(alignFramework));
+  const aboutDropdown = document.querySelector('.as-nav-dropdown');
+  const aboutToggle = aboutDropdown?.querySelector('.as-nav-dropdown-toggle');
+  if (aboutDropdown && aboutToggle) {
+    const setAboutOpen = open => {
+      aboutDropdown.dataset.open = String(open);
+      aboutToggle.setAttribute('aria-expanded', String(open));
+    };
+    aboutToggle.addEventListener('click', () => setAboutOpen(aboutDropdown.dataset.open !== 'true'));
+    document.addEventListener('click', event => {
+      if (!aboutDropdown.contains(event.target)) setAboutOpen(false);
+    });
+    aboutDropdown.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        setAboutOpen(false);
+        aboutToggle.focus();
+      }
+    });
+    aboutDropdown.querySelectorAll('.as-nav-submenu a').forEach(link => {
+      if ((link.getAttribute('href') || '') === page) {
+        link.setAttribute('aria-current', 'page');
+        aboutToggle.classList.add('as-nav-current');
+      }
+    });
+  }
   const button = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('main-nav');
   if (button && menu) {
@@ -62,7 +86,7 @@
     };
     setOpen(false);
     button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { setOpen(false); if (aboutDropdown) { aboutDropdown.dataset.open = 'false'; aboutToggle?.setAttribute('aria-expanded', 'false'); } }));
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
         setOpen(false);
