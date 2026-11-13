@@ -1,25 +1,164 @@
-.advisory-site{margin:0;background:#fff;color:#233344;font-family:Inter,"Segoe UI",Arial,sans-serif}.advisory-site .as-header-pillars{display:none!important}
-.as-advisory{--as-navy:#080d55;--as-green:#21843a;--as-orange:#e9781d;--as-muted:#526475;background:white;color:#243344;line-height:1.65}.as-advisory *{box-sizing:border-box}
-.as-advisory-wrap{width:min(1150px,calc(100% - 60px));margin-inline:auto}
-.as-advisory-hero{background:linear-gradient(115deg,#eef8ed,#f8fbfa 57%,#fff0df);padding:62px 0 67px;text-align:center}
-.as-advisory-eyebrow{text-transform:uppercase;letter-spacing:1.6px;font-size:12px;font-weight:800;color:var(--as-green)}
-.as-advisory h1{font:800 clamp(34px,5vw,55px)/1.12 Manrope,Inter,sans-serif;color:var(--as-navy);margin:8px 0 14px;letter-spacing:-.04em}
-.as-advisory-accent{display:block;width:84px;height:4px;background:var(--as-orange);border-radius:4px;margin:18px auto 23px}
-.as-advisory-hero p:last-child{max-width:740px;margin:0 auto;color:#435669;font-size:18px}
-.as-advisory-main{padding:50px 0 85px}
-.as-advisory-intro{text-align:center;max-width:760px;margin:0 auto 38px;color:var(--as-muted);font-size:17px}
-.as-advisory-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start}
-.as-advisory-person{border:1px solid #dfe9e4;border-radius:19px;overflow:hidden;box-shadow:0 10px 32px #153c3010;background:#fff}
-.as-advisory-person img{display:block;width:220px;height:220px;max-width:calc(100% - 40px);object-fit:cover;object-position:center;border-radius:50%;margin:26px auto 0;background:#eff4ed;border:5px solid #f1f8ef}
-.as-advisory-content{padding:27px 29px 31px}
-.as-advisory-content h2{font:800 clamp(23px,2.5vw,28px)/1.2 Manrope,Inter,sans-serif;color:var(--as-navy);margin:0 0 8px;letter-spacing:-.025em}
-.as-advisory-role{color:var(--as-green);font-size:14px;font-weight:800;margin-bottom:19px!important}
-.as-advisory-content p{font-size:15px;line-height:1.74;color:#34485b;margin:0 0 15px}
-.as-advisory-note{margin-top:43px;background:#f1f8ef;border-left:4px solid var(--as-green);border-radius:8px;padding:20px 24px;color:#355044}
-.as-advisory-note strong{display:block;color:var(--as-navy);margin-bottom:4px}
-.as-advisory-note p{margin:0;font-size:15px}
-.as-advisory-skip{position:absolute;left:-9999px}.as-advisory-skip:focus{position:fixed;top:8px;left:8px;z-index:100;padding:10px;background:#fff}
-@media(max-width:760px){.as-advisory-wrap{width:calc(100% - 36px)}.as-advisory-grid{grid-template-columns:1fr;gap:25px}.as-advisory-hero{padding:48px 0 50px}.as-advisory-hero p:last-child{font-size:16px}.as-advisory-main{padding:35px 0 65px}.as-advisory-person img{width:200px;height:200px}.as-advisory-content{padding:23px 22px}}
-/* Keep the current small portrait assets at native display size until high-resolution replacements are published. */
-.as-advisory-person img{width:260px;max-width:100%;height:300px;object-fit:cover;object-position:center;margin:24px auto 0;border-radius:12px;background:#eff4ed}
-@media(max-width:760px){.as-advisory-person img{width:260px;height:300px;max-width:calc(100% - 32px)}}
+.advisory-site {
+  margin: 0;
+  background: #fff;
+  color: #233344;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.advisory-site .as-header-pillars {
+  display: none;
+}
+
+.as-advisory {
+  --advisory-navy: #080d55;
+  --advisory-green: #21651e;
+  --advisory-orange: #b94a00;
+  --advisory-serif: Georgia, "Times New Roman", serif;
+  background: #fff;
+  color: var(--advisory-navy);
+  line-height: 1.55;
+}
+
+.as-advisory * { box-sizing: border-box; }
+
+.as-advisory-wrap {
+  width: min(1150px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.as-advisory-hero {
+  position: relative;
+  padding: 44px 0 78px;
+  background:
+    linear-gradient(90deg, #fff 0%, #fff 23%, #fff9 57%, #fff0 82%),
+    url("../assets/about-seedling-sunrise.webp") center right / cover no-repeat;
+}
+
+.as-advisory-eyebrow {
+  margin: 0 0 2px;
+  color: var(--advisory-orange);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: clamp(.85rem, 2vw, 1.2rem);
+  font-weight: 800;
+}
+
+.as-advisory h1 {
+  margin: 0 0 6px;
+  font: 700 clamp(2.5rem, 6vw, 4.65rem)/1.06 var(--advisory-serif);
+  letter-spacing: -.035em;
+}
+
+.as-advisory-lead {
+  margin: 0;
+  font: 400 clamp(1.13rem, 2.4vw, 1.6rem)/1.25 var(--advisory-serif);
+}
+
+.as-advisory-wave {
+  position: absolute;
+  inset: auto 0 0;
+  display: block;
+  width: 100%;
+  height: clamp(26px, 4.5vw, 64px);
+}
+
+.as-advisory-main { padding: 32px 0 48px; }
+
+.as-advisory-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.as-advisory-person {
+  display: grid;
+  grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 34px);
+  align-items: start;
+  padding: clamp(16px, 2.2vw, 26px);
+  border: 1px solid #528b41;
+  border-radius: 17px;
+  box-shadow: 0 7px 16px #223d2020;
+  background: #fff;
+}
+
+.as-advisory-person img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #eff4ed;
+}
+
+.as-advisory-content h2,
+.as-advisory-note h2 {
+  margin: 0 0 5px;
+  font: 700 clamp(1.7rem, 3.6vw, 2.55rem)/1.12 var(--advisory-serif);
+  letter-spacing: -.025em;
+}
+
+.as-advisory-content p {
+  margin: 0 0 10px;
+  font-size: .98rem;
+}
+
+.as-advisory-content .as-advisory-role {
+  margin-bottom: 13px;
+  color: var(--advisory-green);
+  font: 700 clamp(1.04rem, 2.1vw, 1.42rem)/1.2 var(--advisory-serif);
+}
+
+.as-advisory-content p:last-child { margin-bottom: 0; }
+
+.as-advisory-note {
+  margin-top: 34px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #e8f3e0;
+  text-align: center;
+}
+
+.as-advisory-note h2 { font-size: clamp(1.55rem, 3vw, 2.2rem); }
+
+.as-advisory-note p {
+  max-width: 780px;
+  margin: 7px auto 0;
+}
+
+.as-advisory-note::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 4px;
+  background: #ff790f;
+}
+
+.as-advisory-skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.as-advisory-skip:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px;
+  background: #fff;
+}
+
+@media (max-width: 680px) {
+  .as-advisory-wrap { width: calc(100% - 32px); }
+  .as-advisory-hero {
+    padding: 38px 0 58px;
+    background-image:
+      linear-gradient(90deg, #fff 0%, #fffd 60%, #fff6 100%),
+      url("../assets/about-seedling-sunrise.webp");
+  }
+  .as-advisory-main { padding-top: 22px; }
+  .as-advisory-person { grid-template-columns: 1fr; }
+  .as-advisory-person img { width: min(100%, 360px); }
+}
