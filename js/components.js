@@ -3,7 +3,7 @@
   const page = location.pathname.split('/').pop() || 'index.html';
   const components = [
     ['site-header', 'components/header.html?v=about-dropdown-20261113'],
-    ['site-footer', 'components/footer.html?v=shared-footer-20261110']
+    ['site-footer', 'components/footer.html?v=subscribe-fix-20261113']
   ];
   await Promise.all(components.map(async ([id, url]) => {
     const target = document.getElementById(id);
@@ -24,6 +24,33 @@
       target.textContent = 'Unable to load site navigation. Please refresh the page.';
     }
   }));
+  const subscribeForm = document.querySelector('.as-footer-subscribe');
+  if (subscribeForm) {
+    const subscribeStatus = subscribeForm.querySelector('[role="status"]');
+    const subscribeButton = subscribeForm.querySelector('button[type="submit"]');
+    subscribeForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!subscribeForm.reportValidity()) return;
+      subscribeButton.disabled = true;
+      subscribeStatus.hidden = false;
+      subscribeStatus.textContent = 'Submitting your subscription…';
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: new FormData(subscribeForm),
+          headers: { Accept: 'application/json' }
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.message || 'Unable to subscribe.');
+        subscribeStatus.textContent = result.message;
+        subscribeForm.reset();
+      } catch (error) {
+        subscribeStatus.textContent = error.message || 'Unable to subscribe. Please try again.';
+      } finally {
+        subscribeButton.disabled = false;
+      }
+    });
+  }
   const updateActiveNavigation = () => {
     const currentHash = location.hash || '#top';
     document.querySelectorAll('.as-unified-nav a').forEach(link => {
