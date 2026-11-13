@@ -12,7 +12,7 @@
       const response = await fetch(url);
       if (!response.ok) throw new Error('HTTP ' + response.status);
       let markup = await response.text();
-      if (id === 'site-header' && ['about.html', 'scope.html', 'advisory-board.html'].includes(page)) {
+      if (id === 'site-header' && ['about.html', 'scope.html'].includes(page)) {
         const template = document.createElement('template');
         template.innerHTML = markup;
         template.content.querySelector('.as-header-pillars')?.remove();
@@ -24,21 +24,6 @@
       target.textContent = 'Unable to load site navigation. Please refresh the page.';
     }
   }));
-  const aboutMenu = document.querySelector('.as-unified-about-menu');
-  const aboutToggle = document.querySelector('.as-unified-about-toggle');
-  if (aboutMenu && aboutToggle) {
-    aboutToggle.addEventListener('click', () => {
-      const open = aboutMenu.dataset.open !== 'true';
-      aboutMenu.dataset.open = String(open);
-      aboutToggle.setAttribute('aria-expanded', String(open));
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        aboutMenu.dataset.open = 'false';
-        aboutToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
   const updateActiveNavigation = () => {
     const currentHash = location.hash || '#top';
     document.querySelectorAll('.as-unified-nav a').forEach(link => {
