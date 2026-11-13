@@ -1,67 +1,55 @@
-
-    // Mobile navigation is initialized after shared components load in components.js.
-
-    // 4. Animated Counters for Stats Grid
-    const counters = document.querySelectorAll('.counter');
-    let animated = false;
-
+// Shared page enhancements and contact form submission.
+document.addEventListener('DOMContentLoaded', function () {
+  const counters = document.querySelectorAll('.counter');
+  const epidemiologySec = document.getElementById('epidemiology');
+  let animated = false;
+  if (counters.length && epidemiologySec) {
     const animateCounters = () => {
-      const epidemiologySec = document.getElementById('epidemiology');
-      if (!epidemiologySec) return;
-
-      const position = epidemiologySec.getBoundingClientRect();
-      if (position.top < window.innerHeight && !animated) {
-        animated = true;
-        counters.forEach(counter => {
-          const target = +counter.getAttribute('data-target');
-          let count = 0;
-          const speed = Math.ceil(target / 40);
-
-          const updateCount = () => {
-            count += speed;
-            if (count < target) {
-              counter.innerText = count;
-              setTimeout(updateCount, 40);
-            } else {
-              counter.innerText = target;
-            }
-          };
-          updateCount();
-        });
-      }
+      if (animated || epidemiologySec.getBoundingClientRect().top >= window.innerHeight) return;
+      animated = true;
+      counters.forEach(counter => {
+        const target = Number(counter.getAttribute('data-target')) || 0;
+        let count = 0;
+        const speed = Math.max(1, Math.ceil(target / 40));
+        const updateCount = () => {
+          count = Math.min(target, count + speed);
+          counter.textContent = String(count);
+          if (count < target) setTimeout(updateCount, 40);
+        };
+        updateCount();
+      });
     };
     window.addEventListener('scroll', animateCounters, { passive: true });
     animateCounters();
-  
-
-(function () {
- const form = document.getElementById('alsakeena-contact-form');
- if (!form) return;
- const status = document.getElementById('contact-form-status');
- const submit = form.querySelector('[type="submit"]');
- form.addEventListener('submit', async function (event) {
-  event.preventDefault();
-  if (!form.reportValidity()) return;
-  submit.disabled = true;
-  submit.setAttribute('aria-busy', 'true');
-  status.textContent = 'Sending your message…';
-  try {
-   const response = await fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-   });
-   const data = await response.json();
-   if (!response.ok) throw new Error(data.message || 'Message could not be sent.');
-   status.textContent = data.message;
-   status.className = 'text-sm text-green-800 font-semibold';
-   form.reset();
-  } catch (error) {
-   status.textContent = error.message || 'Unable to send. Please email info@alsakeena.org directly.';
-   status.className = 'text-sm text-red-700 font-semibold';
-  } finally {
-   submit.disabled = false;
-   submit.removeAttribute('aria-busy');
   }
- });
-})();
+
+  const form = document.getElementById('alsakeena-contact-form');
+  if (!form) return;
+  const status = document.getElementById('contact-form-status');
+  const submit = form.querySelector('button[type="submit"]');
+  if (!status || !submit) return;
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    submit.disabled = true;
+    status.textContent = 'Sending your message…';
+    status.className = 'text-sm text-slate-600';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || 'Unable to send your message.');
+      status.textContent = result.message;
+      status.className = 'text-sm text-green-800 font-semibold';
+      form.reset();
+    } catch (error) {
+      status.textContent = error.message || 'Unable to send your message. Please email info@alsakeena.org directly.';
+      status.className = 'text-sm text-red-700 font-semibold';
+    } finally {
+      submit.disabled = false;
+    }
+  });
+});
