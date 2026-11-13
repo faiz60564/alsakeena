@@ -19,11 +19,12 @@
       <div class="as-footer-updates">
         <h2 class="as-footer-heading">Stay Informed</h2>
         <p>Subscribe to our impact reports and updates.</p>
-        <form class="as-footer-subscribe" onsubmit="event.preventDefault();this.querySelector('[role=status]').hidden=false;">
+        <form class="as-footer-subscribe" action="subscribe-submit.php" method="post">
+          <div class="as-footer-sr-only" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
           <label class="as-footer-sr-only" for="as-footer-email">Your email address</label>
           <input id="as-footer-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
           <button type="submit">Subscribe</button>
-          <p class="as-footer-status" role="status" hidden>To request updates, please email <a href="mailto:info@alsakeena.org">info@alsakeena.org</a>.</p>
+          <p class="as-footer-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>
