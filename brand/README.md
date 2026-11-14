@@ -4,7 +4,7 @@ Check this guide before using or replacing any AlSakeena graphic. This folder is
 
 ## Current website logo
 
-As approved by Faiz on November 14, 2026, the website tagline is **Helping People with Mental Illnesses**. The approved new logo is `approved/alsakeena-helping-people-logo.webp`, with an identical deployment copy at `assets/alsakeena-helping-people-logo.webp`. It replaces the previous tagline in active website placements. Earlier graphics below are retained as historical originals; do not use their old tagline for new website placements.
+The latest approved website tagline is **Supporting Your Mental Health Journey**. Faiz approved this logo preview and its website publication in this conversation. The current artwork is `approved/alsakeena-mental-health-journey-logo.webp`, with an identical deployment copy at `assets/alsakeena-mental-health-journey-logo.webp`. Use this version for active website placements. The previous Helping People with Mental Illnesses artwork and earlier logos below are preserved as historical originals.
 
 ## Earlier approved graphics
 
